@@ -1,11 +1,15 @@
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { RouteConfig, renderRoutes } from 'react-router-config';
 
-import App from './app';
+import routes from './routes';
 
 const renderMethod = ReactDOM.render;
-const render = () => renderMethod(
-  <App />,
+const render = (Routes: RouteConfig[]) => renderMethod(
+  <Router>
+    {renderRoutes(Routes)}
+  </Router>,
   document.getElementById('root'),
 );
 
-render();
+render(routes as RouteConfig[]);
