@@ -2,6 +2,8 @@ import { RouteConfig, renderRoutes } from 'react-router-config';
 import { Helmet } from 'react-helmet';
 import config from '../config';
 
+import 'normalize.css/normalize.css';
+import '../theme/global.css';
 import styles from './styles.module.css';
 
 interface Route {
