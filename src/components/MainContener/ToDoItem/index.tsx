@@ -7,9 +7,9 @@ interface Props {
   toDoData: ToDo;
 }
 
-const ToDoItem = ({ toDoData: { id, content, status }, ...rest }: Props): JSX.Element => (
-  <div id={`${id}`} className={styles.ToDoItem} {...rest}>
-    <input type="radio" checked={status} />
+const ToDoItem = ({ toDoData: { id, content, state }, ...rest }: Props): JSX.Element => (
+  <div id={id} className={styles.ToDoItem} {...rest}>
+    <input type="radio" checked={state} />
     <p>{content}</p>
     <DeleteToDo className={styles.DeleteToDo} />
   </div>

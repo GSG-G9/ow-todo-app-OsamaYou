@@ -8,7 +8,7 @@ const MainContener = (): JSX.Element => (
   <main className={styles.Main}>
     <AddToDo />
     <div className={styles.ListContener}>
-      <ToDoList toDoList={[{ id: 1, content: 'It just test', status: false }]} />
+      <ToDoList toDoList={[{ id: '1', content: 'It just test', state: false }]} />
       <ToDoAction />
     </div>
   </main>
