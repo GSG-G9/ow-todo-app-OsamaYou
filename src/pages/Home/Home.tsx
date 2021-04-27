@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -20,4 +20,4 @@ const Home: FC<Props> = (): JSX.Element => (
   </div>
 );
 
-export default memo(Home);
+export default Home;
