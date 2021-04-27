@@ -1,0 +1,31 @@
+.AddToDo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 45px;
+  padding: 0 20px;
+  background-color: var(--secund-bg-color);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.17);
+  box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.17);
+}
+
+.AddToDo > input[type="text"] {
+  padding-top: 5px;
+  outline: none;
+  border: none;
+  width: 100%;
+  caret-color: var(--bright-blue);
+  background-color: transparent;
+}

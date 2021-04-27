@@ -1,0 +1,53 @@
+.ToDoAction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 45px;
+  font-size: 14px;
+}
+
+.ToDoAction span {
+  padding: 0 30px 0 20px;
+  color: var(--third-font-color);
+}
+
+.ToDoAction__Center {
+  display: inherit;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  color: var(--secund-font-color);
+}
+
+button:hover {
+  color: var(--font-color);
+}
+
+.ButtonClicked {
+  color: var(--bright-blue);
+}
+
+.ToDoAction > button {
+  padding: 0 20px;
+}

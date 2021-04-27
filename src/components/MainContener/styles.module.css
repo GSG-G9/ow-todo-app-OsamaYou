@@ -1,0 +1,32 @@
+.ListContener {
+  border-radius: 5px;
+  background-color: var(--secund-bg-color);
+  -webkit-box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.17);
+  box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.17);
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input[type="radio"]::after {
+  content: '';
+  display: block;
+  position: relative;
+  margin: auto 0;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="radio"]:checked::after {
+  background:
+    url(../../static/icons/icon-check.svg) no-repeat,
+    var(--check-Background);
+  border-radius: 50%;
+  background-size: 55%;
+  background-position: center;
+}

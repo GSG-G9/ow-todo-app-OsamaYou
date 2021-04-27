@@ -1,3 +1,9 @@
+export interface ToDo {
+  id: number;
+  content: string;
+  status: boolean;
+}
+
 // To-Do
 interface Data {
   data?: [];
