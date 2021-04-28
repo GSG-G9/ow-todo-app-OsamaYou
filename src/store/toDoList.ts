@@ -55,7 +55,7 @@ export const fetchToDoList = (): AppThunk => async (dispatch) => {
   if (error) {
     dispatch(getFailure(error.message));
   } else {
-    dispatch(getSuccess(data as ToDo[]));
+    dispatch(getSuccess(data?.reverse() as ToDo[]));
   }
 };
 
