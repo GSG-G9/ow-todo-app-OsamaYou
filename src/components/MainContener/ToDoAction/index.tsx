@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { deleteCompletedToDo } from '../../../services/jsonPlaceholder';
-import { AppState } from '../../../store';
 
 import { UpdateFilterIfNeed, UpdateToDoListIfNeed } from '../../../store/toDoList';
+import { deleteCompletedToDo, ToDo } from '../../../services/jsonPlaceholder';
+import { AppState } from '../../../store';
 
 import styles from './styles.module.css';
 
 const ToDoAction = (): JSX.Element => {
   const [activeBtn, setActiveBtn] = useState({ all: true, active: false, completed: false });
+  const [activeList, setActiveList] = useState([] as ToDo[]);
+  const [leftCont, setLeftCont] = useState(0);
 
   const dispatch = useDispatch();
   const { items } = useSelector(
@@ -16,14 +18,7 @@ const ToDoAction = (): JSX.Element => {
     shallowEqual,
   );
 
-  const onActionClicked = (action: string) => () => {
-    dispatch(UpdateFilterIfNeed(action));
-    setActiveBtn({
-      all: false, active: false, completed: false, [action]: true,
-    });
-  };
-
-  const onClearCompletedBtnClicked = async () => {
+  useEffect(() => {
     let cont = 0;
     const list = items.filter(({ state }) => {
       if (state) {
@@ -32,11 +27,21 @@ const ToDoAction = (): JSX.Element => {
       }
       return true;
     });
+    setActiveList(list as ToDo[]);
+    setLeftCont(cont);
+  }, [items]);
+  const onActionClicked = (action: string) => () => {
+    dispatch(UpdateFilterIfNeed(action));
+    setActiveBtn({
+      all: false, active: false, completed: false, [action]: true,
+    });
+  };
 
-    if (cont !== 0) {
+  const onClearCompletedBtnClicked = async () => {
+    if (leftCont !== 0) {
       const { error } = await deleteCompletedToDo();
       if (!error) {
-        dispatch(UpdateToDoListIfNeed(list));
+        dispatch(UpdateToDoListIfNeed(activeList));
       }
     }
   };
@@ -44,7 +49,7 @@ const ToDoAction = (): JSX.Element => {
   return (
     <div className={styles.ToDoAction}>
       <span>
-        {`${items.length} items left`}
+        {`${activeList.length} items left`}
       </span>
       <div className={styles.ToDoAction__Center}>
         <button
