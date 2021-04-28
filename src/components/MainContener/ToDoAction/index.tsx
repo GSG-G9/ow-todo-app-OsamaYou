@@ -28,10 +28,11 @@ const ToDoAction = (): JSX.Element => {
     const list = items.filter(({ state }) => {
       if (state) {
         cont += 1;
-        return !state;
+        return false;
       }
-      return state;
+      return true;
     });
+
     if (cont !== 0) {
       const { error } = await deleteCompletedToDo();
       if (!error) {
