@@ -3,6 +3,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { fetchToDoListIfNeed } from '../../store/toDoList';
 import { AppState } from '../../store';
+import toDoListFilter from '../../utils/toDoListFilter';
 import { Loading } from '..';
 
 import ToDoList from './ToDoList';
@@ -13,7 +14,7 @@ import styles from './styles.module.css';
 
 const MainContener = (): JSX.Element => {
   const dispatch = useDispatch();
-  const { readyStatus, items } = useSelector(
+  const { readyStatus, items, filter } = useSelector(
     ({ toDoList }: AppState) => toDoList,
     shallowEqual,
   );
@@ -28,7 +29,7 @@ const MainContener = (): JSX.Element => {
     }
     if (readyStatus === 'failure') return <p>Oops, It is failed!</p>;
 
-    return <ToDoList toDoList={items} />;
+    return <ToDoList toDoList={toDoListFilter(items, filter)} />;
   };
 
   return (

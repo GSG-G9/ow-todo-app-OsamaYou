@@ -18,6 +18,11 @@ interface ToDoAction {
   error?: Error;
 }
 
+interface ToDoListDeleted {
+  count?: number;
+  error?: Error;
+}
+
 export const getToDoList = async (): Promise<ToDoList> => {
   try {
     const query = gql`
@@ -89,6 +94,23 @@ export const updateToDoState = async (id: string, state: boolean): Promise<ToDoA
     const { updateToDoList: data } = await request(config.API_URL, query);
 
     return { data };
+  } catch (error) {
+    return { error };
+  }
+};
+
+export const deleteCompletedToDo = async (): Promise<ToDoListDeleted> => {
+  try {
+    const query = gql`
+      mutation deleteCompletedToDo {
+        deleteManyToDoLists(where: {state: true}) {
+          count
+        }
+      }
+    `;
+    const { deleteManyToDoLists: { count } } = await request(config.API_URL, query);
+
+    return count;
   } catch (error) {
     return { error };
   }
