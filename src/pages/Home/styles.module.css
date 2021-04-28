@@ -1,12 +1,30 @@
 .Bg {
+  z-index: -1;
+  color: var(--font-color);
+}
+
+.light-mode-Bg {
   background: url(../../static/images/bg-desktop-light.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 210px;
-  z-index: -1;
-  color: var(--font-color);
 }
+
+.dark-mode-Bg {
+  background: url(../../static/images/bg-desktop-dark.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 210px;
+}
+
+/* .dark-mode-Bg {
+  background: url(../../static/images/bg-desktop-dark.jpg) no-repeat !important;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+} */
 
 .Contener {
   display: -webkit-box;
