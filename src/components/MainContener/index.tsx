@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { fetchToDoListIfNeed } from '../../store/toDoList';
@@ -43,4 +43,4 @@ const MainContener = (): JSX.Element => {
   );
 };
 
-export default memo(MainContener);
+export default MainContener;
