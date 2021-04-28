@@ -28,7 +28,7 @@ const AddToDo = (): JSX.Element => {
   };
 
   const onTextInputKeyDown = async (e: { key: string; }) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && textValue.trim()) {
       setRadioLoading(true);
       const { error, data } = await addToDo(textValue, radioValue);
 
@@ -47,7 +47,7 @@ const AddToDo = (): JSX.Element => {
   return (
     <div className={styles.AddToDo}>
       <div>
-        {radioLoading ? <Loading /> : <input type="radio" onClick={onRadioBtnClick} onKeyDown={onTextInputKeyDown} defaultChecked={radioValue} />}
+        {radioLoading ? <Loading /> : <input type="radio" onClick={onRadioBtnClick} onKeyDown={onTextInputKeyDown} checked={radioValue} />}
       </div>
 
       <input type="text" placeholder="Add your task" onChange={onTextInputChange} onKeyDown={onTextInputKeyDown} value={textValue} />
