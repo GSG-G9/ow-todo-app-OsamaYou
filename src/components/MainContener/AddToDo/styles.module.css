@@ -21,6 +21,10 @@
   box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.17);
 }
 
+.AddToDo > div {
+  margin-top: 5px;
+}
+
 .AddToDo > input[type="text"] {
   padding-top: 5px;
   outline: none;
