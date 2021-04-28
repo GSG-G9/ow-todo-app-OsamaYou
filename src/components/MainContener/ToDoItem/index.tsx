@@ -58,7 +58,7 @@ const ToDoItem = ({ toDoData: { id, content, state }, ...rest }: Props): JSX.Ele
   return (
     <div id={id} className={`${styles.ToDoItem} ${radioValue && styles.ToDoItemDone}`} {...rest}>
       {radioLoading ? <Loading /> : <input type="radio" defaultChecked={radioValue} onClick={onRadioBtnClick} />}
-      <p>{content}</p>
+      <div className={styles.ToDoItemText} onClick={onRadioBtnClick} aria-hidden="true">{content}</div>
       {!radioLoading && <DeleteToDo className={styles.DeleteToDo} onClick={onDeleteBtnClick} />}
     </div>
   );

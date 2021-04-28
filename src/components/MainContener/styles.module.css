@@ -10,7 +10,7 @@ input[type="radio"] {
   height: 20px;
   outline: none;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 11.5px;
 }
 
 input[type="radio"]::after {
