@@ -1,5 +1,4 @@
-import { Action, configureStore } from '@reduxjs/toolkit';
-import { ThunkAction } from 'redux-thunk';
+import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 
 import rootReducer from './rootReducer';
 
