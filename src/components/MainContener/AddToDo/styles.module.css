@@ -32,4 +32,5 @@
   width: 100%;
   caret-color: var(--bright-blue);
   background-color: transparent;
+  color: inherit;
 }
