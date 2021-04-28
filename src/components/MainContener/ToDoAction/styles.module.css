@@ -44,8 +44,10 @@ button:hover {
   color: var(--font-color);
 }
 
-.ButtonClicked {
+.ButtonClicked,
+.ButtonClicked:hover {
   color: var(--bright-blue);
+  cursor: default;
 }
 
 .ToDoAction > button {
