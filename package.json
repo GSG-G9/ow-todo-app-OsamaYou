@@ -25,7 +25,6 @@
   "dependencies": {
     "@loadable/component": "^5.14.1",
     "@reduxjs/toolkit": "^1.5.1",
-    "axios": "^0.21.1",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
     "normalize.css": "^8.0.1",
